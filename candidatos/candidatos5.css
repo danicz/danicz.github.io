@@ -1,0 +1,49 @@
+.candidatos-container {
+    max-width: 700px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.g-headshot {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    background: #aeaeae;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 14px;
+}
+
+.g-headshot img {
+    position: absolute;
+    top: 5px;
+}
+a img {
+    border: none;
+}
+img {
+    height: auto;
+    max-width: 100%;
+}
+/*a:visited {
+    color: #aeaeae;
+}*/
+a:visited, a:active {
+    color: #9e9e9e;
+}
+a, a:hover, a:focus, a:link {
+    text-decoration: none;
+    color: #9e9e9e;
+}
+
+a.g-candidate:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+h1, h2, h3, h4 {
+    margin: 0;
+    text-align: center;
+}
+p {
+    margin: 0;
+    text-align: center;
+}
