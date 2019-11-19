@@ -7,9 +7,6 @@
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <!-- extra style -->
-<style type="text/css">
-#container { margin-left: auto; margin-right: auto; width: 400px;}
-</style>
 <title>Comunicados BCRA</title>
 </head>
 <body>
@@ -32,7 +29,7 @@ $.get('comunicados.csv', function(data) {
 		// split line into columns
 		var columns = ourrow.split(",");
 		html += "<td>" + columns[0] + "</td>";
-		html += "<td><a href='" + columns[2] + "'>" + columns[1] + "</a></td>";
+		html += "<td><a href='" + columns[2] + "' target='_blank'>" + columns[1] + "</a></td>";
 		// close row
 		html += "</tr>";
 	})
