@@ -12,14 +12,15 @@
 <body>
 <div class="container">
 <h1 >Comunicados BCRA</h1>
-
+  <p>Buscar Comunicados:</p>
+  <input class="form-control" id="entrada" type="text" placeholder="Buscar..">
 	<div id="cont"></div>
 </div>
 </body>
 <script>
 $.get('comunicados.csv', function(data) {
 	// start the table
-	var html = '<div class="table-responsive-sm"> <table class="table table-hover"> <thead><tr><th scope="col">Fecha</th><th scope="col">Comunicado</th></tr></thead><tbody>';
+	var html = '<div class="table-responsive-sm"> <table class="table table-hover"> <thead><tr><th scope="col">Fecha</th><th scope="col">Comunicado</th></tr></thead><tbody id="tabla">';
 	// split into lines
 	var rows = data.split("\n");
 	// parse lines
@@ -42,6 +43,15 @@ $.get('comunicados.csv', function(data) {
 	html += "</tbody></table></div>";
 	// insert into div
 	$('#cont').append(html);
+});
+
+$(document).ready(function(){
+  $("#entrada").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#tabla tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
 });
 </script>
 
