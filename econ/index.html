@@ -12,8 +12,9 @@
 <body>
 
 <h1 align="center" style="margin-top:5px; margin-bottom:5px;">Comunicados de política monetaria - BCRA</h1>
-<div id="container"></div>
-
+<div class="container">
+	<div id="cont"></div>
+</div>
 </body>
 <script>
 $.get('comunicados.csv', function(data) {
@@ -40,7 +41,7 @@ $.get('comunicados.csv', function(data) {
 	// close table
 	html += "</tbody></table>";
 	// insert into div
-	$('#container').append(html);
+	$('#cont').append(html);
 });
 </script>
 
