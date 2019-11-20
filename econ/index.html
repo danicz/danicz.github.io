@@ -19,7 +19,7 @@
 <script>
 $.get('comunicados.csv', function(data) {
 	// start the table
-	var html = '<table class="table table-hover"> <thead><tr><th scope="col">Fecha</th><th scope="col">Comunicado</th></tr></thead><tbody>';
+	var html = '<table class="table-responsive table-hover"> <thead><tr><th scope="col">Fecha</th><th scope="col">Comunicado</th></tr></thead><tbody>';
 	// split into lines
 	var rows = data.split("\n");
 	// parse lines
