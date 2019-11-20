@@ -11,15 +11,14 @@
 </head>
 <body>
 
-<h1 align="center" style="margin-top:150px; margin-bottom:30px;">Comunicados de política monetaria - BCRA</h1>
-<!-- where the content will go -->
+<h1 align="center" style="margin-top:5px; margin-bottom:5px;">Comunicados de política monetaria - BCRA</h1>
 <div id="container"></div>
 
 </body>
 <script>
 $.get('comunicados.csv', function(data) {
 	// start the table
-	var html = '<table class="table table-striped"> <thead><tr><th scope="col">Fecha</th><th scope="col">Comunicado</th></tr></thead><tbody>';
+	var html = '<table class="table table-hover"> <thead><tr><th scope="col">Fecha</th><th scope="col">Comunicado</th></tr></thead><tbody>';
 	// split into lines
 	var rows = data.split("\n");
 	// parse lines
@@ -28,7 +27,7 @@ $.get('comunicados.csv', function(data) {
 		html += "<tr>";
 		// split line into columns
 		var columns = ourrow.split(",");
-		html += "<td>" + columns[0] + "</td>";
+		html += "<th scope='row'>" + columns[0] + "</th>";
 		html += "<td><a href='" + columns[2] + "' target='_blank'>" + columns[1] + "</a></td>";
 		// close row
 		html += "</tr>";
