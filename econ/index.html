@@ -23,14 +23,19 @@ $.get('comunicados.csv', function(data) {
 	var rows = data.split("\n");
 	// parse lines
 	rows.forEach( function getvalues(ourrow) {
-		// start a table row
-		html += "<tr>";
+	
 		// split line into columns
 		var columns = ourrow.split(",");
-		html += "<th scope='row'>" + columns[0] + "</th>";
-		html += "<td><a href='" + columns[2] + "' target='_blank'>" + columns[1] + "</a></td>";
-		// close row
-		html += "</tr>";
+		
+		if (typeof(columns[1]) != "undefined") {
+			// start a table row
+			html += "<tr>";
+
+			html += "<th scope='row'>" + columns[0] + "</th>";
+			html += "<td><a href='" + columns[2] + "' target='_blank'>" + columns[1] + "</a></td>";
+			// close row
+			html += "</tr>";
+		}	
 	})
 	// close table
 	html += "</tbody></table>";
