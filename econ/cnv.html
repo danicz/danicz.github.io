@@ -19,7 +19,7 @@
 <script>
 $.get('hechorelevantes.csv', function(data) {
 	// start the table
-	var html = '<div class="table-responsive-sm"> <table class="table table-hover"> <thead><tr><th scope="col">Fecha</th><th scope="col">Entidad</th><th scope="col">Descripcion</th><th scope="col">Documento</th></tr></thead><tbody id="tabla">';
+	var html = '<div class="table-responsive-sm"> <table class="table table-striped"> <thead><tr><th scope="col">Fecha</th><th scope="col">Entidad</th><th scope="col">Descripcion</th><th scope="col">Documento</th></tr></thead><tbody id="tabla">';
 	// split into lines
 	var rows = data.split("\n");
 	// parse lines
@@ -33,8 +33,8 @@ $.get('hechorelevantes.csv', function(data) {
 			html += "<tr>";
 
 			html += "<th scope='row'>" + columns[0] + "</th>";
-			html += "<th scope='row'>" + columns[1] + "</th>";
-			html += "<th scope='row'>" + columns[2] + "</th>";
+			html += "<td>" + columns[1] + "</td>";
+			html += "<td>" + columns[2] + "</td>";
 			html += "<td><a href='" + columns[4] + "' target='_blank'>" + columns[3] + "</a></td>";
 			// close row
 			html += "</tr>";
